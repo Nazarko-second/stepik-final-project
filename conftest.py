@@ -30,7 +30,7 @@ def browser(request):
 	# fp = webdriver.FirefoxProfile()
 	# fp.set_preference("intl.accept_languages", 'en-US,en')
 	# browser = webdriver.Firefox(firefox_profile=fp)
-	# browser.implicitly_wait(10)
+	browser.implicitly_wait(10)
 	yield browser
 	print("\nquit browser..")
 	browser.quit()

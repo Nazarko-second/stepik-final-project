@@ -14,9 +14,6 @@ class BasePage(object):
 		try:
 			self.browser.find_element(how, what)
 		except NoSuchElementException:
-			print("NO ELEMENT @@@@@")
+			print("NO ELEMENT @@@@@")   # needs to be investigated
 			return False
 		return True
-
-
-#print('__file__={0:<35} | __name__={1:<20} | __package__={2:<20}'.format(__file__,__name__,str(__package__)))

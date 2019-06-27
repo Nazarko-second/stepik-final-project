@@ -23,4 +23,5 @@ def test_guest_should_see_login_page(browser):
     page.open()
     page.should_be_login_page()
 
+
 #print('__file__={0:<35} | __name__={1:<20} | __package__={2:<20}'.format(__file__,__name__,str(__package__)))

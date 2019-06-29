@@ -20,3 +20,7 @@ class ProductPageLocators(object):
     SUCCESS_MESSAGE = (By.CSS_SELECTOR, "#messages .alertinner")
     BASKET_TOTAL = (By.CSS_SELECTOR, "div.basket-mini")
     PRODUCT_PRICE = (By.CSS_SELECTOR, "p.price_color")
+
+class BasePageLocators(object):
+    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")

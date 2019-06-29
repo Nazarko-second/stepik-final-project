@@ -6,7 +6,7 @@ product_base_link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-w
 urls = ["{}/?promo=offer{}".format(product_base_link, no) for no in range(6, 9)]
 
 @pytest.mark.parametrize('link', urls)
-def test_guest_can_add_product_to_cart(browser, link):
+def atest_guest_can_add_product_to_cart(browser, link):
     link = link
     page = ProductPage(browser, link)
     page.open()
@@ -21,3 +21,14 @@ def test_guest_cant_see_success_message(browser):
     page.open()
     page.should_not_be_success_message()
 
+def test_guest_should_see_login_link_on_product_page(browser):
+    link = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-city-and-the-stars_95/"
+    page = ProductPage(browser, link)
+    page.open()
+    page.should_be_login_link()
+
+def test_guest_can_go_to_login_page_from_product_page (browser):
+    link = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-city-and-the-stars_95/"
+    page = ProductPage(browser, link)
+    page.open()
+    page.go_to_login_page()

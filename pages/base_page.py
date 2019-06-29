@@ -4,6 +4,7 @@ from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from .locators import BasePageLocators
+from .locators import MainPageLocators
 import math
 
 
@@ -20,7 +21,7 @@ class BasePage(object):
         try:
             self.browser.find_element(how, what)
         except NoSuchElementException:
-            print("NO ELEMENT @@@@@")   # needs to be investigated
+            print("NO ELEMENT {}".format(what))
             return False
         return True
 
@@ -60,3 +61,7 @@ class BasePage(object):
 
     def should_be_login_link(self):
         assert self.is_element_present(*BasePageLocators.LOGIN_LINK), "Login link is not presented"
+
+    def go_to_cart(self):
+        cart_link = self.browser.find_element(*MainPageLocators.CART_BTN)
+        cart_link.click()

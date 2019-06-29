@@ -2,7 +2,9 @@ from selenium.webdriver.common.by import By
 
 
 class MainPageLocators(object):
-    pass
+    LOGIN_LINK = (By.CSS_SELECTOR, "#registration_link")
+    CART_BTN = (By.CSS_SELECTOR, "div.basket-mini a.btn")
+
 
 class LoginPageLocators(object):
     LOGIN_FORM = (By.CSS_SELECTOR, "#login_form")
@@ -24,3 +26,7 @@ class ProductPageLocators(object):
 class BasePageLocators(object):
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+
+class CartPageLocators(object):
+    PRODUCTS_LIST = (By.CSS_SELECTOR, "#basket_formset")
+    EMPTY_CART_MESSAGE = (By.CSS_SELECTOR, "#content_inner>p")

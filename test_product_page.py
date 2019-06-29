@@ -16,3 +16,8 @@ def test_guest_can_add_product_to_cart(browser, link):
     page.check_message_product_added_to_basket()
     page.compare_product_price_to_basket_total()
 
+def test_guest_cant_see_success_message(browser):
+    page = ProductPage(browser, product_base_link)
+    page.open()
+    page.should_not_be_success_message()
+

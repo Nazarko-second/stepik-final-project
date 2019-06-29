@@ -10,7 +10,7 @@ class ProductPage(BasePage):
 		add_btn.click()
 
 	def check_message_product_added_to_basket(self):
-		assert "has been added to your basket" in self.browser.find_element(*ProductPageLocators.ALLERT_IN_BASKET).text, "Added to basket text is not presented"
+		assert "Coders at Work has been added to your basket." == self.browser.find_element(*ProductPageLocators.ALLERT_IN_BASKET).text, "Added to basket text is not presented"
 
 	def compare_product_price_to_basket_total(self):
 		basket_raw = self.browser.find_element(*ProductPageLocators.BASKET_TOTAL).text

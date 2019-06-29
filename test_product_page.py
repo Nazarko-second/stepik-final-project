@@ -1,9 +1,13 @@
-from .pages.product_page import ProductPage
+from pages.product_page import ProductPage
 import time
+import pytest
 
+product_base_link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207"
+urls = ["{}/?promo=offer{}".format(product_base_link, no) for no in range(6, 9)]
 
-def test_guest_can_add_product_to_cart(browser):
-    link = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/coders-at-work_207/?promo=newYear2019"
+@pytest.mark.parametrize('link', urls)
+def test_guest_can_add_product_to_cart(browser, link):
+    link = link
     page = ProductPage(browser, link)
     page.open()
     page.add_to_basket()
@@ -11,3 +15,4 @@ def test_guest_can_add_product_to_cart(browser):
     #time.sleep(1)
     page.check_message_product_added_to_basket()
     page.compare_product_price_to_basket_total()
+

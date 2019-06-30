@@ -10,7 +10,6 @@ import time
 class TestLoginFromMainPage(object):
 
     def test_guest_can_go_to_login_page(self, browser):
-        #link = "http://selenium1py.pythonanywhere.com/catalogue/the-shellcoders-handbook_209?promo=midsummer"
         link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207"
         page = MainPage(browser, link)
         page.open()

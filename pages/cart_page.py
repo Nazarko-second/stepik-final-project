@@ -10,8 +10,8 @@ class CartPage(BasePage):
     def check_there_are_no_products_in_cart(self):
         assert self.is_not_element_present(*CartPageLocators.PRODUCTS_LIST)
 
-    # def check_there_are_some_products_in_cart(self):
-    #     assert self.is_element_present(*CartPageLocators.PRODUCTS_LIST)
+    def check_there_are_some_products_in_cart(self):
+        assert self.is_element_present(*CartPageLocators.PRODUCTS_LIST)
 
     def should_be_text_cart_is_empty(self):
         message_full = self.browser.find_element(*CartPageLocators.EMPTY_CART_MESSAGE).text

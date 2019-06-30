@@ -5,7 +5,6 @@ class MainPageLocators(object):
     LOGIN_LINK = (By.CSS_SELECTOR, "#registration_link")
     CART_BTN = (By.CSS_SELECTOR, "div.basket-mini a.btn")
 
-
 class LoginPageLocators(object):
     LOGIN_FORM = (By.CSS_SELECTOR, "#login_form")
     # LOGIN_EMAIL = (By.CSS_SELECTOR, "#id_login-username")

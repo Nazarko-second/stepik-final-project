@@ -26,11 +26,9 @@ def browser(request):
 		options.add_experimental_option('prefs', {'intl.accept_languages': 'en-US,en'})
 		print("\nstarting default english localization for test..")
 		browser = webdriver.Chrome(options=options)
-	#browser = webdriver.Chrome()
 	# fp = webdriver.FirefoxProfile()
 	# fp.set_preference("intl.accept_languages", 'en-US,en')
 	# browser = webdriver.Firefox(firefox_profile=fp)
-	browser.implicitly_wait(10)
 	yield browser
 	print("\nquit browser..")
 	browser.quit()

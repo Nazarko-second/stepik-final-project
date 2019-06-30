@@ -12,10 +12,10 @@ class LoginPageLocators(object):
     # LOGIN_PASS = (By.CSS_SELECTOR, "#id_login-password")
     # LOGIN_SUBMIT_BTN = (By.CSS_SELECTOR, "button[name='login_submit']")
     REGISTER_FORM = (By.CSS_SELECTOR, "#register_form")
-    # REGISTER_EMAIL = (By.CSS_SELECTOR, "#id_registration-email")
-    # REGISTER_PASS = (By.CSS_SELECTOR, "#id_registration-password1")
-    # REGISTER_PASS_CONFIRM = (By.CSS_SELECTOR, "#id_registration-password2")
-    # REGISTER_SUBMIT_BTN = (By.CSS_SELECTOR, "button[name='registration_submit']")
+    REGISTER_EMAIL = (By.CSS_SELECTOR, "#id_registration-email")
+    REGISTER_PASS = (By.CSS_SELECTOR, "#id_registration-password1")
+    REGISTER_PASS_CONFIRM = (By.CSS_SELECTOR, "#id_registration-password2")
+    REGISTER_SUBMIT_BTN = (By.CSS_SELECTOR, "button[name='registration_submit']")
 
 class ProductPageLocators(object):
     ADD_TO_BASKET_BTN = (By.CSS_SELECTOR, ".btn-add-to-basket")
@@ -26,6 +26,7 @@ class ProductPageLocators(object):
 class BasePageLocators(object):
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+    USER_ICON = (By.CSS_SELECTOR, ".icon-user")
 
 class CartPageLocators(object):
     PRODUCTS_LIST = (By.CSS_SELECTOR, "#basket_formset")

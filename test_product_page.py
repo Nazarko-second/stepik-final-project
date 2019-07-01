@@ -2,13 +2,13 @@
 # First one requires dots in front of folder name ".pages" and other doesn't.
 # So, if you have errors regarding imports, please try both methods.
 
-# from pages.product_page import ProductPage
-# from pages.cart_page import CartPage
-# from pages.login_page import LoginPage
+from pages.product_page import ProductPage
+from pages.cart_page import CartPage
+from pages.login_page import LoginPage
 
-from .pages.product_page import ProductPage
-from .pages.cart_page import CartPage
-from .pages.login_page import LoginPage
+# from .pages.product_page import ProductPage
+# from .pages.cart_page import CartPage
+# from .pages.login_page import LoginPage
 
 import time
 import pytest
@@ -30,10 +30,9 @@ class TestUserAddToCartFromProductPage(object):
         page.register_new_user(email, password)
         page.should_be_authorized_user()
 
-    @pytest.mark.parametrize('link', urls)
     @pytest.mark.need_review
-    def test_user_can_add_product_to_cart(self, browser, link):
-        link = link
+    def test_user_can_add_product_to_cart(self, browser):
+        link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer2"
         page = ProductPage(browser, link)
         page.open()
         page.add_to_basket()
@@ -47,10 +46,9 @@ class TestUserAddToCartFromProductPage(object):
         page.should_not_be_success_message()
 
 
-@pytest.mark.parametrize('link', urls)
 @pytest.mark.need_review
-def test_guest_can_add_product_to_cart(browser, link):
-    link = link
+def test_guest_can_add_product_to_cart(browser):
+    link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer2"
     page = ProductPage(browser, link)
     page.open()
     page.add_to_basket()

@@ -1,13 +1,21 @@
-from pages.product_page import ProductPage
-from pages.cart_page import CartPage
-from pages.login_page import LoginPage
+# For some reason relative import works different on my 2 PCs
+# First one requires dots in front of folder name ".pages" and other doesn't.
+# So, if you have errors regarding imports, please try both methods.
+
+# from pages.product_page import ProductPage
+# from pages.cart_page import CartPage
+# from pages.login_page import LoginPage
+
+from .pages.product_page import ProductPage
+from .pages.cart_page import CartPage
+from .pages.login_page import LoginPage
+
 import time
 import pytest
 
 
 product_base_link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207"
 urls = ["{}/?promo=offer{}".format(product_base_link, no) for no in [0,1,2,3,4,5,6,8,9]]
-#urls = ["{}/?promo=offer{}".format(product_base_link, no) for no in range(2)]
 reg_link = "http://selenium1py.pythonanywhere.com/accounts/login/"
 
 

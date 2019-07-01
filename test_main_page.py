@@ -1,10 +1,19 @@
-from pages.main_page import MainPage
-from pages.base_page import BasePage
-from pages.login_page import LoginPage
-from pages.cart_page import CartPage
+# For some reason relative import works different on my 2 PCs
+# One requires dots in front of folder name ".pages" and other doesn't.
+# So, if you have errors regarding imports, please try both methods.
+
+# from pages.main_page import MainPage
+# from pages.base_page import BasePage
+# from pages.login_page import LoginPage
+# from pages.cart_page import CartPage
+
+from .pages.main_page import MainPage
+from .pages.base_page import BasePage
+from .pages.login_page import LoginPage
+from .pages.cart_page import CartPage
+
 import pytest
 import time
-
 
 @pytest.mark.login_guest
 class TestLoginFromMainPage(object):
